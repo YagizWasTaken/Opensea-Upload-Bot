@@ -10,8 +10,7 @@ import random
 import win32api, win32con
 import math
 
-#open OpenSea and go to your profile
-time.sleep(2)
+
 
 #click code
 def click(x,y):
@@ -20,17 +19,19 @@ def click(x,y):
     time.sleep(0.1)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0,0)
 
+print("system is online")
 
 #inputs
-start_value=109
-end_value=151
-collection_name="Metahuman"
-price=0.02
+start_value=int(input("Start Value:"))
+end_value=int(input("End Value:"))
+collection_name=input("Collection Name:")
+price=float(input("Price(It is only ETH right now new coins are coming soon):"))
 
-print("system is online")
 
 while start_value<end_value :
     print(collection_name + "_" + str(start_value) + " is creating...")
+    #open OpenSea and go to your profile
+    time.sleep(2)
        #create
     click(1752,95)
     time.sleep(3)
@@ -112,4 +113,8 @@ while start_value<end_value :
     click(1209,189)
     print(collection_name + "_" + str(start_value) + " is created.")
     time.sleep(5)
-    start_value += 1            
+    start_value += 1          
+
+print = str(end_value - start_value) + " NFT are created."
+time.sleep(2)
+print="OpenSea Upload Bot made by YagizWasTaken"
